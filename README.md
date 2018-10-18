@@ -1,10 +1,26 @@
 # gitlab-runner-self-register-maven
 
-usage
------
-sudo docker run -v {location of register-run-maven.sh}:/home/gitlab-runner -it mxl125/gitlab-runner-self-register-maven:latest
+in the docker-compose-yml use
 
-register-run-maven.sh
--------------------------
-/usr/bin/gitlab-runner register --non-interactive --executor "shell" --url "http://X.X.X.X" --registration-token "XXX" --description "gitlab_runner_maven" --tag-list "maven" --run-untagged="false" --locked="false"
-/usr/bin/gitlab-runner run --user=gitlab-runner --working-directory=/home/gitlab-runner
+```yaml
+  gitlab_runner_maven_01: 
+    image: 'mxl125/gitlab-runner-self-register-maven:latest'
+    depends_on:
+      - "gitlab"
+    deploy:
+      placement:
+        constraints:
+          - node.labels.service == gitlab-runners
+    environment:
+      - GITLAB_URL=http://gitlab
+      - GITLAB_REGISTRATION_TOKEN=the registration token that gitlab produces on page http://gitlab/admin/runners
+      - GITLAB_RUNNER_TAGLIST=maven,{{.Service.Name}}
+      - GITLAB_RUNNER_DESCRIPTION=maven shell on node {{.Node.Hostname}}
+    hostname: '{{.Service.Name}}'
+    privileged: true
+    restart: 'always'
+    volumes:
+      - 'gitlab_runner_maven_01-config:/etc/gitlab-runner'
+      - 'gitlab_runner_maven_01-home:/home/gitlab-runner'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+```
