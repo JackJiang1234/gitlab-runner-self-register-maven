@@ -1,96 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
-    <servers>
-        <server>
-            <username>gitlab</username>
-            <password>eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJDWlV1dDY0X1FTLXFpQUk5aGVMdDZYN2hxVGJGV0FlbmRvR3oyTjhWNDdnIn0.eyJzdWIiOiJqZnJ0QDAxY3Z0ZXhwcGFlYjFtMDRiYWF4cmQwYm
-ZyXC91c2Vyc1wvZ2l0bGFiIiwic2NwIjoibWVtYmVyLW9mLWdyb3VwczpyZWFkZXJzIGFwaToqIiwiYXVkIjoiamZydEAwMWN2dGV4cHBhZWIxbTA0YmFheHJkMGJmciIsImlzcyI6ImpmcnRAMDFjdnRleHBwYWViMW0wNGJhYXhyZDBiZnIiLCJleHAi
-OjE1NDE3MTE3NjQsImlhdCI6MTU0MTcwODE2NCwianRpIjoiOTczOWQ1ZWItM2RiMC00MTlhLWFlMTEtMTQ0MDk3YjM0ZDY3In0.nGRDfHIilkhNIeF2t9aOn8PNTuhZjKADae5Mk7Ivh8wdDddnIhbfIpdL04RUYVV2CKHbWxO_21UbNzJ6B4jd0ga_Ll
-oGFBD44x6hNbpF4wX6-hW7GN4JrklKV2DmBLEyDI5GlEbaVUvj-dAKYGMz4pGKdhXbX0FvhIFyMFUuIzKQabfeB5-bfhK0gjDgrIIMsQmWXpcESodGmo0y7eNtMZWCnRWy-fz9fNzGKRKrAhshwtWMyQiLnP-PXnEmGjFpcG4xoGjrl3J0FdBmwhk6aPq-
-hLq0t5DRieYnMH74KcF3ZH96PtzBVgxEIKRdAJfDYv4PTRIDNeuMHQKRH9t4FA</password>
-            <id>central</id>
-        </server>
-
-        <server>
-            <username>gitlab</username>
-            <password>eyJ2ZXIiOiIyIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYiLCJraWQiOiJDWlV1dDY0X1FTLXFpQUk5aGVMdDZYN2hxVGJGV0FlbmRvR3oyTjhWNDdnIn0.eyJzdWIiOiJqZnJ0QDAxY3Z0ZXhwcGFlYjFtMDRiYWF4cmQwYm
-ZyXC91c2Vyc1wvZ2l0bGFiIiwic2NwIjoibWVtYmVyLW9mLWdyb3VwczpyZWFkZXJzIGFwaToqIiwiYXVkIjoiamZydEAwMWN2dGV4cHBhZWIxbTA0YmFheHJkMGJmciIsImlzcyI6ImpmcnRAMDFjdnRleHBwYWViMW0wNGJhYXhyZDBiZnIiLCJleHAi
-OjE1NDE3MTE3NjQsImlhdCI6MTU0MTcwODE2NCwianRpIjoiOTczOWQ1ZWItM2RiMC00MTlhLWFlMTEtMTQ0MDk3YjM0ZDY3In0.nGRDfHIilkhNIeF2t9aOn8PNTuhZjKADae5Mk7Ivh8wdDddnIhbfIpdL04RUYVV2CKHbWxO_21UbNzJ6B4jd0ga_Ll
-oGFBD44x6hNbpF4wX6-hW7GN4JrklKV2DmBLEyDI5GlEbaVUvj-dAKYGMz4pGKdhXbX0FvhIFyMFUuIzKQabfeB5-bfhK0gjDgrIIMsQmWXpcESodGmo0y7eNtMZWCnRWy-fz9fNzGKRKrAhshwtWMyQiLnP-PXnEmGjFpcG4xoGjrl3J0FdBmwhk6aPq-
-hLq0t5DRieYnMH74KcF3ZH96PtzBVgxEIKRdAJfDYv4PTRIDNeuMHQKRH9t4FA</password>
-            <id>snapshots</id>
-        </server>
-    </servers>
-    <mirrors>
-        <mirror>
-            <id>artifactory</id>
-            <mirrorOf>*</mirrorOf>
-            <name>Artifactory</name>
-            <url>http://10.10.10.147:8081/artifactory/seti</url>
-        </mirror>
-    </mirrors>
-
-    <profiles>
-        <profile>
-            <id>sonar</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <sonar.host.url>
-                    http://10.10.10.145:9000
-                </sonar.host.url>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>artifactory</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <repositories>
-                <repository>
-                    <snapshots>
-                    <enabled>false</enabled>
-                    </snapshots>
-                    <id>central</id>
-                    <name>libs-release</name>
-                    <url>http://10.10.10.147:8081/artifactory/libs-release</url>
-                </repository>
-
-                <repository>
-                    <snapshots />
-                    <id>snapshots</id>
-                    <name>libs-snapshot</name>
-                    <url>http://10.10.10.147:8081/artifactory/libs-snapshot</url>
-                </repository>
-            </repositories>
-
-            <pluginRepositories>
-                <pluginRepository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>central</id>
-                    <name>libs-release</name>
-                    <url>http://10.10.10.147:8081/artifactory/libs-release</url>
-                </pluginRepository>
-
-                <pluginRepository>
-                    <snapshots />
-                    <id>snapshots</id>
-                    <name>libs-snapshot</name>
-                    <url>http://10.10.10.147:8081/artifactory/libs-snapshot</url>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-
-    </profiles>
-
-    <activeProfiles>
-        <activeProfile>artifactory</activeProfile>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <servers>
+    <server>
+      <username>cicd</username>
+      <password>{WUUKvafsEsYHQPQq32UqYcbDAqLr5LvgFJCw9WbQdHKi8dhNGe3r5iPLBA6CsICe}</password>
+      <id>central</id>
+    </server>
+    <server>
+      <username>cicd</username>
+      <password>{WUUKvafsEsYHQPQq32UqYcbDAqLr5LvgFJCw9WbQdHKi8dhNGe3r5iPLBA6CsICe}</password>
+      <id>snapshots</id>
+    </server>
+  </servers>
+  <profiles>
+  
+		<profile>
+			<id>sonar</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<sonar.host.url>
+					http://10.10.10.145:9000
+				</sonar.host.url>
+			</properties>
+		</profile>
+        
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>libs-release</name>
+          <url>http://10.10.10.147:8081/artifactory/libs-release</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>http://10.10.10.147:8081/artifactory/libs-snapshot</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>libs-release</name>
+          <url>http://10.10.10.147:8081/artifactory/libs-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>http://10.10.10.147:8081/artifactory/libs-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+		<activeProfiles>
+		<activeProfile>artifactory</activeProfile>
         <activeProfile>sonar</activeProfile>
-    </activeProfiles>
+  </activeProfiles>
 </settings>
