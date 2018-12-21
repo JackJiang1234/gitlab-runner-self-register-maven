@@ -14,6 +14,8 @@ curl -L ${GITLAB_URL}
 echo "unregister"
 /usr/bin/gitlab-runner unregister --all-runners
 
+rm -rf /home/gitlab-runner/builds/*
+
 echo "initializing"
   /usr/bin/gitlab-runner register \
     --non-interactive \
