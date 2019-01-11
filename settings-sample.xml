@@ -20,7 +20,7 @@
 			<id>artifactory_seti</id>
 			<mirrorOf>*</mirrorOf>
 			<name>SETI Maven Repository</name>
-			<url>http://10.10.10.147:8081/artifactory/seti</url>
+			<url>http://ubuntu-gitlabstack04:8081/artifactory/seti</url>
 		</mirror>
 	</mirrors>
 	
@@ -33,7 +33,7 @@
 			</activation>
 			<properties>
 				<sonar.host.url>
-					http://10.10.10.145:9000
+					http://ubuntu-gitlabstack03:9000
 				</sonar.host.url>
 			</properties>
 		</profile>
@@ -47,13 +47,13 @@
 					</snapshots>
 					<id>central</id>
 					<name>libs-release</name>
-					<url>http://10.10.10.147:8081/artifactory/libs-release</url>
+					<url>http://ubuntu-gitlabstack04:8081/artifactory/libs-release</url>
 				</repository>
 				<repository>
 					<snapshots />
 					<id>snapshots</id>
 					<name>libs-snapshot</name>
-					<url>http://10.10.10.147:8081/artifactory/libs-snapshot</url>
+					<url>http://ubuntu-gitlabstack04:8081/artifactory/libs-snapshot</url>
 				</repository>
 			</repositories>
 			<pluginRepositories>
@@ -63,13 +63,13 @@
 					</snapshots>
 					<id>central</id>
 					<name>libs-release</name>
-					<url>http://10.10.10.147:8081/artifactory/libs-release</url>
+					<url>http://ubuntu-gitlabstack04:8081/artifactory/libs-release</url>
 				</pluginRepository>
 				<pluginRepository>
 					<snapshots />
 					<id>snapshots</id>
 					<name>libs-snapshot</name>
-					<url>http://10.10.10.147:8081/artifactory/libs-snapshot</url>
+					<url>http://ubuntu-gitlabstack04:8081/artifactory/libs-snapshot</url>
 				</pluginRepository>
 			</pluginRepositories>
 		</profile>
