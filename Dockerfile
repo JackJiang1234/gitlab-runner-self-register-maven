@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install openjdk-8-jdk maven docker.io sudo supervi
 RUN echo "#the following will increase the heap" >> /etc/environment
 RUN echo 'MAVEN_OPTS="-Xmx768m"' >> /etc/environment
 RUN echo "gitlab-runner  ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN mkdir /home/gitlab-runner/mm && chown chown –R gitlab-runner:gitlab-runner /home/gitlab-runner/mm
+RUN mkdir /home/gitlab-runner/mm && chown –R gitlab-runner:gitlab-runner /home/gitlab-runner/mm
 COPY settings-sample.xml /etc/maven/settings.xml
 COPY mm.conf /etc/supervisor/conf.d/mm.conf
 COPY backend_api.jar /home/gitlab-runner/mm
