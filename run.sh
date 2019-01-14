@@ -16,8 +16,6 @@ echo "unregister"
 
 rm -rf /home/gitlab-runner/builds/*
 
-supervisord -c /etc/supervisord.conf
-
 echo "initializing"
   /usr/bin/gitlab-runner register \
     --non-interactive \
