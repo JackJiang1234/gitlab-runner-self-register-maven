@@ -1,0 +1,1 @@
+docker run --rm -d -v /etc/gitlab-runner -e "GITLAB_URL=https://code.shareworks.cn/" -e "GITLAB_REGISTRATION_TOKEN=9pTmHVRZDz4q4QSxWZVk" -e "GITLAB_RUNNER_TAGLIST=''" -e "GITLAB_RUNNER_DESCRIPTION=mm-dev-gitlab-runner" gitlab-runner-self-register-maven-jack:latest
