@@ -2,3 +2,5 @@ docker run --rm -d -v /etc/gitlab-runner -v /var/run/docker.sock -e "GITLAB_URL=
 
 
 docker build . -t gitlab-runner-self-register-maven-jack:latest
+
+docker exec -it containerid /bin/bash
