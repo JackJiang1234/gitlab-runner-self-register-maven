@@ -1,4 +1,4 @@
-docker run --rm -d -v /etc/gitlab-runner -v /var/run/docker.sock -e "GITLAB_URL=https://code.shareworks.cn/" -e "GITLAB_REGISTRATION_TOKEN=9pTmHVRZDz4q4QSxWZVk" -e "GITLAB_RUNNER_TAGLIST=maven" -e "GITLAB_RUNNER_DESCRIPTION=mm-jack-dev-gitlab-runner" gitlab-runner-self-register-maven-jack:latest
+docker run --restart=always -p80:80 -p8080:8080 -p8090:8090 -p9000:9000 -d -v /etc/gitlab-runner -v /var/run/docker.sock -e "GITLAB_URL=https://code.shareworks.cn/" -e "GITLAB_REGISTRATION_TOKEN=9pTmHVRZDz4q4QSxWZVk" -e "GITLAB_RUNNER_TAGLIST=maven" -e "GITLAB_RUNNER_DESCRIPTION=mm-jack-dev-gitlab-runner" gitlab-runner-self-register-maven-jack:latest
 
 
 docker build . -t gitlab-runner-self-register-maven-jack:latest
