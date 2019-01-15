@@ -1,5 +1,5 @@
 FROM gitlab/gitlab-runner:latest
-RUN apt-get update && apt-get install openjdk-8-jdk maven docker.io sudo supervisor nginx nodejs npm -y && apt update && apt upgrade -y 
+RUN apt-get update && apt-get install openjdk-8-jdk maven docker.io sudo supervisor nginx -y && apt update && apt upgrade -y 
 RUN curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
 RUN apt-get install nodejs
 RUN echo "#the following will increase the heap" >> /etc/environment
