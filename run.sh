@@ -18,6 +18,8 @@ rm -rf /home/gitlab-runner/builds/*
 
 supervisord -c /etc/supervisor/supervisord.conf
 
+nginx 
+
 echo "initializing"
   /usr/bin/gitlab-runner register \
     --non-interactive \
