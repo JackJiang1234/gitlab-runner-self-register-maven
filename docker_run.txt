@@ -4,3 +4,18 @@ docker run --restart=always -p80:80 -p8080:8080 -p8090:8090 -p9000:9000 -d -v /e
 docker build . -t gitlab-runner-self-register-maven-jack:latest
 
 docker exec -it containerid /bin/bash
+
+
+docker build . -t gitlab-runner-self-register-maven-jack:latest
+
+docker exec -it containerid /bin/bash
+
+
+/usr/bin/gitlab-runner run --user=root --working-directory=/home/gitlab-runner 
+
+gitlab-runner restart
+
+
+docker tag gitlab-runner-self-register-maven-jack:latest jackjiangjiang/gitlab-runner-self-register-maven-jack:latest
+
+docker push jackjiangjiang/gitlab-runner-self-register-maven-jack:latest
