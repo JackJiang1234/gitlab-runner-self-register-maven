@@ -1,0 +1,27 @@
+stages:
+  - deploy
+ 
+backendApi:
+  stage: deploy
+  script: 
+    - mvn package
+    - sudo cp ./target/mm-0.0.1-SNAPSHOT.jar /project/mm/backend_api.jar
+    - sudo supervisorctl restart mm
+  only:
+    - master
+  tags:
+    - maven
+
+frontend:
+   stage: deploy
+   script:
+    - cd frontend
+    - npm install 
+    - npm run dll
+    - npm run build
+    - sudo cp dist/*.*  /var/www/html/
+    - sudo nginx -s reload
+   only:
+    - master
+   tags:
+    - html
