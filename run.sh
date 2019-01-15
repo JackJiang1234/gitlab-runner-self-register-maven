@@ -33,7 +33,7 @@ echo "initializing"
 
 echo "running"
 /usr/bin/gitlab-runner run \
-  --user=gitlab-runner \
+  --user=root \
   --working-directory=/home/gitlab-runner 
 
 
